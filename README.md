@@ -260,14 +260,9 @@ Proyecto realizado como práctica de desarrollo backend con Node.js y Express.
 
 ---
 
-## 📝 Licencia
-
-Este proyecto es de código abierto y está disponible bajo la licencia MIT.
-
----
-
 <div align="center">
 
 **⭐ Si te gustó este proyecto, dale una estrella en GitHub ⭐**
 
 </div>
+
