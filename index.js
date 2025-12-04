@@ -5,20 +5,11 @@ const port = 3000;
 // Middleware para recibir JSON
 app.use(express.json());
 
-// Base de datos temporal (en memoria)
-let perros = [
-  { id: 1, nombre: "Firulais", raza: "Labrador", edad: 4 },
-  { id: 2, nombre: "Rocco", raza: "Pitbull", edad: 2 },
-  { id: 3, nombre: "Max", raza: "Golden Retriever", edad: 3 },
-  { id: 4, nombre: "Luna", raza: "Husky Siberiano", edad: 5 },
-  { id: 5, nombre: "Rocky", raza: "Pastor Alemán", edad: 6 },
-  { id: 6, nombre: "Bella", raza: "Beagle", edad: 2 },
-  { id: 7, nombre: "Toby", raza: "Bulldog Francés", edad: 4 },
-  { id: 8, nombre: "Coco", raza: "Chihuahua", edad: 3 },
-  { id: 9, nombre: "Zeus", raza: "Rottweiler", edad: 7 },
-  { id: 10, nombre: "Lola", raza: "Poodle", edad: 2 },
- 
-];
+// Servir archivos estáticos (HTML, CSS, JS)
+app.use(express.static('public'));
+
+// Importar base de datos desde archivo separado
+let perros = require("./perros");
 
 // GET - Obtener todos los perros
 app.get("/perros", (req, res) => {

@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🐾 Clínica Veterinaria PetCare</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="logo">
+                <span class="logo-icon">🐾</span>
+                <h1>Clínica Veterinaria PetCare</h1>
+            </div>
+            <nav>
+                <a href="#pacientes">Pacientes</a>
+                <a href="#registrar">Registrar</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <h2>Cuidamos a tus mejores amigos 🐶</h2>
+            <p>Sistema de gestión de pacientes veterinarios</p>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <main class="container">
+        
+        <!-- Formulario de Registro -->
+        <section id="registrar" class="form-section">
+            <h2>📋 Registrar Nuevo Paciente</h2>
+            <form id="formulario-perro">
+                <div class="form-grid">
+                    <div class="form-group">
+                        <label for="nombre">Nombre del paciente</label>
+                        <input type="text" id="nombre" name="nombre" placeholder="Ej: Firulais" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="raza">Raza</label>
+                        <input type="text" id="raza" name="raza" placeholder="Ej: Labrador" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="edad">Edad (años)</label>
+                        <input type="number" id="edad" name="edad" placeholder="Ej: 3" min="0" max="30" required>
+                    </div>
+                </div>
+                
+                <button type="submit" class="btn btn-primary">
+                    <span>➕</span> Registrar Paciente
+                </button>
+            </form>
+        </section>
+
+        <!-- Estadísticas -->
+        <section class="stats">
+            <div class="stat-card">
+                <span class="stat-icon">🐕</span>
+                <div class="stat-info">
+                    <h3 id="total-perros">0</h3>
+                    <p>Pacientes Registrados</p>
+                </div>
+            </div>
+            <div class="stat-card">
+                <span class="stat-icon">⭐</span>
+                <div class="stat-info">
+                    <h3 id="promedio-edad">0</h3>
+                    <p>Edad Promedio (años)</p>
+                </div>
+            </div>
+            <div class="stat-card">
+                <span class="stat-icon">🏆</span>
+                <div class="stat-info">
+                    <h3 id="raza-popular">-</h3>
+                    <p>Raza Más Popular</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Lista de Pacientes -->
+        <section id="pacientes" class="patients-section">
+            <div class="section-header">
+                <h2>🐾 Pacientes Registrados</h2>
+                <div class="search-box">
+                    <input type="text" id="buscar" placeholder="🔍 Buscar paciente...">
+                </div>
+            </div>
+            
+            <div id="lista-perros" class="patients-grid">
+                <!-- Los perros se cargan dinámicamente aquí -->
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>© 2024 Clínica Veterinaria PetCare | Desarrollado con ❤️ por Leandro Carpio</p>
+        </div>
+    </footer>
+
+    <!-- Modal para Editar -->
+    <div id="modal-editar" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>✏️ Editar Paciente</h3>
+                <span class="close">&times;</span>
+            </div>
+            <form id="formulario-editar">
+                <input type="hidden" id="editar-id">
+                
+                <div class="form-group">
+                    <label for="editar-nombre">Nombre</label>
+                    <input type="text" id="editar-nombre" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="editar-raza">Raza</label>
+                    <input type="text" id="editar-raza" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="editar-edad">Edad (años)</label>
+                    <input type="number" id="editar-edad" min="0" max="30" required>
+                </div>
+                
+                <div class="modal-buttons">
+                    <button type="submit" class="btn btn-primary">💾 Guardar Cambios</button>
+                    <button type="button" class="btn btn-secondary" id="btn-cancelar">Cancelar</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
